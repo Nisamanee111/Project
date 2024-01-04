@@ -26,9 +26,9 @@ def get_partial_data_gas():
         item['_id'] = str(item['_id'])
     return jsonify(data), 200
 
-@app.route('/api/data/temperature', methods=['GET'])
+@app.route('/api/data/temp', methods=['GET'])
 def get_partial_data_temperature():
-    collection = db['Temperature Status']  
+    collection = db['Temp Status']  
     data = list(collection.find())
     for item in data:
         item['_id'] = str(item['_id'])
