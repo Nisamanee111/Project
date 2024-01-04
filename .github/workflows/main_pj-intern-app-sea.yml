@@ -63,5 +63,4 @@ jobs:
         id: deploy-to-webapp
         with:
           app-name: 'pj-intern-app-sea'
-          slot-name: 'Production'
           publish-profile: ${{ secrets.AZUREAPPSERVICE_PUBLISHPROFILE_132284716CC64F98AF11214A4D9E7AA2 }}
