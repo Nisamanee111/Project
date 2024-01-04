@@ -6,6 +6,8 @@ name: Build and deploy Python app to Azure Web App - pj-intern-app-sea
 
 on:
   push:
+    paths:
+      - 'app.py'
     branches:
       - main
   workflow_dispatch:
@@ -41,6 +43,7 @@ jobs:
           path: |
             release.zip
             !venv/
+
 
   deploy:
     runs-on: ubuntu-latest
