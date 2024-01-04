@@ -44,6 +44,7 @@ def get_partial_data_door():
 
 
 
+
 #health check
 @app.route('/health', methods=['GET'])
 def health_check():
