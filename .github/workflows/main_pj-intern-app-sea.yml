@@ -8,6 +8,7 @@ on:
   push:
     paths:
       - 'app.py'
+      - 'requirements.txt'
     branches:
       - main
   workflow_dispatch:
