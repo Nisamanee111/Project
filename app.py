@@ -6,15 +6,43 @@ app = Flask(__name__)
 # เชื่อมต่อ MongoDB
 client = MongoClient('mongodb+srv://nisamanee:passw0rd!@ct-pj-iot.mongocluster.cosmos.azure.com/?tls=true&authMechanism=SCRAM-SHA-256&retrywrites=false&maxIdleTimeMS=120000')
 db = client['Project']  
-collection = db['Gas Status']  
+
 
 # สร้าง API endpoint สำหรับดึงข้อมูลบางส่วน
-@app.route('/api/data', methods=['GET'])
-def get_partial_data():
+@app.route('/api/data/light', methods=['GET'])
+def get_partial_data_light():
+    collection = db['Light Status']  
     data = list(collection.find())
     for item in data:
         item['_id'] = str(item['_id'])
     return jsonify(data), 200
+
+
+@app.route('/api/data/gas', methods=['GET'])
+def get_partial_data_gas():
+    collection = db['Gas Status']  
+    data = list(collection.find())
+    for item in data:
+        item['_id'] = str(item['_id'])
+    return jsonify(data), 200
+
+@app.route('/api/data/temp', methods=['GET'])
+def get_partial_data_temperature():
+    collection = db['Temp Status']  
+    data = list(collection.find())
+    for item in data:
+        item['_id'] = str(item['_id'])
+    return jsonify(data), 200
+
+@app.route('/api/data/door', methods=['GET'])
+def get_partial_data_door():
+    collection = db['Door'] 
+    data = list(collection.find())
+    for item in data:
+        item['_id'] = str(item['_id'])
+    return jsonify(data), 200
+
+
 
 #health check
 @app.route('/health', methods=['GET'])
