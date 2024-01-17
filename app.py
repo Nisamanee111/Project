@@ -18,9 +18,9 @@ def get_partial_data_light():
     return jsonify(data), 200
 
 
-@app.route('/api/data/gas', methods=['GET'])
-def get_partial_data_gas():
-    collection = db['Gas Status']  
+@app.route('/api/data/test', methods=['GET'])
+def get_partial_data_TestDatetime():
+    collection = db['TestDatetime']  
     data = list(collection.find())
     for item in data:
         item['_id'] = str(item['_id'])
