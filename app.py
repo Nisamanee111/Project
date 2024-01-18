@@ -26,6 +26,22 @@ def get_partial_data_TestDatetime():
         item['_id'] = str(item['_id'])
     return jsonify(data), 200
 
+@app.route('/api/data/Light01', methods=['GET'])
+def get_partial_data_Light01():
+    collection = db['Light01']  
+    data = list(collection.find())
+    for item in data:
+        item['_id'] = str(item['_id'])
+    return jsonify(data), 200
+
+@app.route('/api/data/test', methods=['GET'])
+def get_partial_data_testTemp():
+    collection = db['testTemp']  
+    data = list(collection.find())
+    for item in data:
+        item['_id'] = str(item['_id'])
+    return jsonify(data), 200
+
 @app.route('/api/data/temp', methods=['GET'])
 def get_partial_data_temperature():
     collection = db['Temp Status']  
