@@ -64,4 +64,4 @@ jobs:
         with:
           app-name: 'pj-app-sea'
           slot-name: 'Production'
-          publish-profile: ${{ secrets.AZUREAPPSERVICE_PUBLISHPROFILE_80B3637A0140438CB4FE5B5AFBDDD10E }}
+          publish-profile: ${{ secrets.AZUREAPPSERVICE_PUBLISHPROFILE_66890A6198694E9CAD6E0CBABCB06C75 }}
