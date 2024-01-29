@@ -50,7 +50,14 @@ def get_partial_data_Test():
         item['_id'] = str(item['_id'])
     return jsonify(data), 200
 
-
+@app.route('/api/data/Tetemp', methods=['GET'])
+def get_partial_data_Tetemp():
+    collection = db['Tetemp']  
+    data = list(collection.find())
+    for item in data:
+        item['_id'] = str(item['_id'])
+    return jsonify(data), 200
+    
 
 #health check
 @app.route('/health', methods=['GET'])
