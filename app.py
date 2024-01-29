@@ -9,8 +9,8 @@ db = client['Project']
 
 
 # สร้าง API endpoint สำหรับดึงข้อมูลบางส่วน
-@app.route('/api/data/Light', methods=['GET'])
-def get_partial_data_Light():
+@app.route('/api/data/light', methods=['GET'])
+def get_partial_data_light():
     collection = db['Light']  
     data = list(collection.find())
     for item in data:
@@ -18,8 +18,8 @@ def get_partial_data_Light():
     return jsonify(data), 200
 
 
-@app.route('/api/data/Temp', methods=['GET'])
-def get_partial_data_Temp():
+@app.route('/api/data/temp', methods=['GET'])
+def get_partial_data_temp():
     collection = db['Temp']  
     data = list(collection.find())
     for item in data:
@@ -34,8 +34,8 @@ def get_partial_data_Humidity():
         item['_id'] = str(item['_id'])
     return jsonify(data), 200
 
-@app.route('/api/data/Door', methods=['GET'])
-def get_partial_data_Door():
+@app.route('/api/data/door', methods=['GET'])
+def get_partial_data_door():
     collection = db['Door']  
     data = list(collection.find())
     for item in data:
