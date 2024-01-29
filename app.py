@@ -9,56 +9,38 @@ db = client['Project']
 
 
 # สร้าง API endpoint สำหรับดึงข้อมูลบางส่วน
-@app.route('/api/data/light', methods=['GET'])
-def get_partial_data_light():
-    collection = db['Light Status']  
+@app.route('/api/data/Light', methods=['GET'])
+def get_partial_data_Light():
+    collection = db['Light']  
     data = list(collection.find())
     for item in data:
         item['_id'] = str(item['_id'])
     return jsonify(data), 200
 
 
-@app.route('/api/data/test', methods=['GET'])
-def get_partial_data_TestDatetime():
-    collection = db['TestDatetime']  
+@app.route('/api/data/Temp', methods=['GET'])
+def get_partial_data_Temp():
+    collection = db['Temp']  
     data = list(collection.find())
     for item in data:
         item['_id'] = str(item['_id'])
     return jsonify(data), 200
 
-@app.route('/api/data/Light01', methods=['GET'])
-def get_partial_data_Light01():
-    collection = db['Light01']  
+@app.route('/api/data/Humidity', methods=['GET'])
+def get_partial_data_Humidity():
+    collection = db['Humidity']  
     data = list(collection.find())
     for item in data:
         item['_id'] = str(item['_id'])
     return jsonify(data), 200
 
-@app.route('/api/data/test', methods=['GET'])
-def get_partial_data_testTemp():
-    collection = db['testTemp']  
+@app.route('/api/data/Door', methods=['GET'])
+def get_partial_data_Door():
+    collection = db['Door']  
     data = list(collection.find())
     for item in data:
         item['_id'] = str(item['_id'])
     return jsonify(data), 200
-
-@app.route('/api/data/temp', methods=['GET'])
-def get_partial_data_temperature():
-    collection = db['Temp Status']  
-    data = list(collection.find())
-    for item in data:
-        item['_id'] = str(item['_id'])
-    return jsonify(data), 200
-
-@app.route('/api/data/door', methods=['GET'])
-def get_partial_data_door():
-    collection = db['Door'] 
-    data = list(collection.find())
-    for item in data:
-        item['_id'] = str(item['_id'])
-    return jsonify(data), 200
-
-
 
 
 #health check
