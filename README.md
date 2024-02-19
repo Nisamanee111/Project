@@ -1,6 +1,3 @@
-# Hello
-Miss Nisamanee Sitthisom
-## My Hobby
- - Watch a movie
- - Listen to music
- - vhvd
+# Project a developed visualization of cloud - based IoT device usage for data center
+
+
