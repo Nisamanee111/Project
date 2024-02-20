@@ -42,41 +42,15 @@ def get_partial_data_door():
         item['_id'] = str(item['_id'])
     return jsonify(data), 200
 
-@app.route('/api/data/Test', methods=['GET'])
-def get_partial_data_Test():
-    collection = db['Testlight']  
-    data = list(collection.find())
-    for item in data:
-        item['_id'] = str(item['_id'])
-    return jsonify(data), 200
-
-@app.route('/api/data/Tetemp', methods=['GET'])
-def get_partial_data_Tetemp():
-    collection = db['Tetemp']  
-    data = list(collection.find())
-    for item in data:
-        item['_id'] = str(item['_id'])
-    return jsonify(data), 200
-
-
-
 #health check
 @app.route('/health', methods=['GET'])
 def health_check():
-    # ทำการตรวจสอบสถานะของระบบ หรือใส่ตรวจสอบอื่น ๆ ตามต้องการ
-    # status = 'ok'  # สถานะที่กำหนดเอง (สามารถใช้ 'ok', 'error', 'warning', หรืออื่น ๆ)
+    
     try:
         client.server_info()
         return jsonify({"message": "Connection OK"}), 200
     except ConnectionError as e:
         return jsonify({"message": "Cannot Connect to DB"}), 500
-    # response = {
-    #     'status': status,
-    #     'message': 'Health check passed successfully'
-    # }
-
-    # if status != 'ok':
-    #     response['message'] = 'Health check failed'
 
     return jsonify(response)
 
