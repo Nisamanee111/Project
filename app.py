@@ -19,7 +19,7 @@ def get_partial_data_light():
 
 
 @app.route('/api/data/temp', methods=['GET'])
-def get_partial_data_temp():
+def get_partial_data_Temp():
     collection = db['Temp']  
     data = list(collection.find())
     for item in data:
@@ -35,7 +35,7 @@ def get_partial_data_Humidity():
     return jsonify(data), 200
 
 @app.route('/api/data/door', methods=['GET'])
-def get_partial_data_door():
+def get_partial_data_Door():
     collection = db['Door']  
     data = list(collection.find())
     for item in data:
@@ -53,8 +53,6 @@ def health_check():
         return jsonify({"message": "Cannot Connect to DB"}), 500
 
     return jsonify(response)
-
-
 
 if __name__ == '__main__':
     app.run(debug=True)
